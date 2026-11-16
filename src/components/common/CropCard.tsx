@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RecommendedCrop } from '../../types';
+import { useApp } from '../../context/AppContext';
 import {
   Droplets,
   Calendar,
@@ -34,6 +35,8 @@ export const CropCard: React.FC<CropCardProps> = ({
   onAddToPlan,
 }) => {
   const navigate = useNavigate();
+  const { language } = useApp();
+  const isHindi = language === 'hi';
   const [showXai, setShowXai] = useState(false);
   const [showRAG, setShowRAG] = useState(false);
   const [showEconomics, setShowEconomics] = useState(false);
@@ -79,11 +82,11 @@ export const CropCard: React.FC<CropCardProps> = ({
           {/* Rank & Score Pill */}
           <div className="absolute top-3 left-3 flex items-center gap-2 flex-wrap">
             <span className={`px-2.5 py-1 rounded-full text-xs font-black shadow-md ${getRankBadge()}`}>
-              Rank #{rank}
+              {isHindi ? `रैंक #${rank}` : `Rank #${rank}`}
             </span>
             <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-white/95 text-forest-900 backdrop-blur-md shadow-md flex items-center gap-1">
               <Sparkles className="w-3 h-3 text-saffron-500" />
-              {crop.suitabilityScore}% Suitability
+              {crop.suitabilityScore}% {isHindi ? 'उपयुक्तता' : 'Suitability'}
             </span>
           </div>
 
@@ -100,10 +103,10 @@ export const CropCard: React.FC<CropCardProps> = ({
           {/* Crop Name & Hindi Name */}
           <div className="absolute bottom-3 left-3 right-3 text-white">
             <h4 className="text-lg font-extrabold leading-tight tracking-tight drop-shadow-sm">
-              {crop.name}
+              {isHindi && crop.hindiName ? crop.hindiName : crop.name}
             </h4>
             <p className="text-xs font-medium text-forest-200 drop-shadow-sm mt-0.5">
-              {crop.hindiName}
+              {isHindi ? crop.name : crop.hindiName}
             </p>
           </div>
         </div>
@@ -119,36 +122,42 @@ export const CropCard: React.FC<CropCardProps> = ({
             <div className="p-2.5 rounded-xl bg-forest-50/60 border border-forest-100/70">
               <div className="flex items-center gap-1.5 text-xs text-charcoal-500 font-medium">
                 <Droplets className="w-3.5 h-3.5 text-forest-600" />
-                <span>Water Need</span>
+                <span>{isHindi ? 'जल आवश्यकता' : 'Water Need'}</span>
               </div>
-              <p className="mt-1 text-sm font-bold text-forest-900">{crop.waterRequirement}</p>
+              <p className="mt-1 text-sm font-bold text-forest-900">
+                {isHindi 
+                  ? (crop.waterRequirement === 'Low' ? 'कम' : crop.waterRequirement === 'High' ? 'अधिक' : 'मध्यम')
+                  : crop.waterRequirement}
+              </p>
             </div>
 
             <div className="p-2.5 rounded-xl bg-forest-50/60 border border-forest-100/70">
               <div className="flex items-center gap-1.5 text-xs text-charcoal-500 font-medium">
                 <Calendar className="w-3.5 h-3.5 text-forest-600" />
-                <span>Duration</span>
+                <span>{isHindi ? 'अवधि' : 'Duration'}</span>
               </div>
-              <p className="mt-1 text-sm font-bold text-forest-900">{crop.growingDurationDays} Days</p>
+              <p className="mt-1 text-sm font-bold text-forest-900">
+                {crop.growingDurationDays} {isHindi ? 'दिन' : 'Days'}
+              </p>
             </div>
 
             <div className="p-2.5 rounded-xl bg-saffron-50/60 border border-saffron-100">
               <div className="flex items-center gap-1.5 text-xs text-charcoal-500 font-medium">
                 <Award className="w-3.5 h-3.5 text-saffron-600" />
-                <span>Expected Yield</span>
+                <span>{isHindi ? 'अपेक्षित पैदावार' : 'Expected Yield'}</span>
               </div>
               <p className="mt-1 text-sm font-bold text-charcoal-900">
-                {crop.expectedYieldQuintalsPerAcre} q/acre
+                {crop.expectedYieldQuintalsPerAcre} {isHindi ? 'क्विंटल/एकड़' : 'q/acre'}
               </p>
             </div>
 
             <div className="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-100">
               <div className="flex items-center gap-1.5 text-xs text-charcoal-500 font-medium">
                 <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Est. Net Profit</span>
+                <span>{isHindi ? 'अनुमानित शुद्ध लाभ' : 'Est. Net Profit'}</span>
               </div>
               <p className="mt-1 text-sm font-bold text-emerald-800">
-                ₹{crop.estimatedNetProfitPerAcre.toLocaleString()}/ac
+                ₹{crop.estimatedNetProfitPerAcre.toLocaleString()}{isHindi ? '/एकड़' : '/ac'}
               </p>
             </div>
           </div>
@@ -284,10 +293,10 @@ export const CropCard: React.FC<CropCardProps> = ({
               {isSelected ? (
                 <>
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  Selected Choice
+                  {isHindi ? 'चयनित फसल' : 'Selected Choice'}
                 </>
               ) : (
-                'Select Crop'
+                isHindi ? 'फसल चुनें' : 'Select Crop'
               )}
             </button>
           )}
@@ -298,7 +307,7 @@ export const CropCard: React.FC<CropCardProps> = ({
               onClick={onAddToPlan}
               className="py-2 px-3 rounded-xl text-xs font-semibold bg-saffron-50 hover:bg-saffron-100 text-saffron-900 border border-saffron-200 transition-all"
             >
-              Add to Plan
+              {isHindi ? 'योजना में जोड़ें' : 'Add to Plan'}
             </button>
           )}
         </div>
@@ -309,7 +318,11 @@ export const CropCard: React.FC<CropCardProps> = ({
           className="w-full py-2 px-3 rounded-xl text-xs font-bold bg-white hover:bg-forest-50 text-forest-900 border border-forest-200 transition-all flex items-center justify-center gap-1.5 shadow-xs"
         >
           <MessageSquare className="w-3.5 h-3.5 text-forest-700" />
-          <span>Ask AI Assistant about {crop.name.split('(')[0].trim()}</span>
+          <span>
+            {isHindi 
+              ? `${(crop.hindiName || crop.name).split('(')[0].trim()} के बारे में एआई से पूछें` 
+              : `Ask AI Assistant about ${crop.name.split('(')[0].trim()}`}
+          </span>
         </button>
       </div>
     </div>

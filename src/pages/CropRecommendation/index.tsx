@@ -38,7 +38,8 @@ import {
 } from 'recharts';
 
 export const CropRecommendationPage: React.FC = () => {
-  const { activeFarm, currentRecommendation, isCalculatingRecommendation, generateRecommendation, showToast } = useApp();
+  const { activeFarm, currentRecommendation, isCalculatingRecommendation, generateRecommendation, showToast, language, t } = useApp();
+  const isHindi = language === 'hi';
 
   const [step, setStep] = useState(5); // Start at 5 (results view) for instant rich feedback or let user re-run wizard!
   const [selectedCropIndex, setSelectedCropIndex] = useState(0);
@@ -147,20 +148,20 @@ export const CropRecommendationPage: React.FC = () => {
           <div className="flex items-center gap-2 flex-wrap mb-1.5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-50 border border-forest-200 text-xs font-bold text-forest-800">
               <Sparkles className="w-3.5 h-3.5 text-saffron-500" />
-              <span>Hybrid Tri-Model AI Decision Engine</span>
+              <span>{isHindi ? 'हाइब्रिड ट्राई-मॉडल एआई निर्णय इंजन' : 'Hybrid Tri-Model AI Decision Engine'}</span>
             </div>
             {isCalculatingRecommendation && (
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-xs font-bold text-amber-800 animate-pulse">
                 <RefreshCw className="w-3 h-3 animate-spin text-amber-600" />
-                <span>Computing AI Pipeline...</span>
+                <span>{isHindi ? 'एआई पाइपलाइन गणना कर रही है...' : 'Computing AI Pipeline...'}</span>
               </div>
             )}
           </div>
           <h1 className="text-2xl sm:text-3xl font-black text-forest-900 tracking-tight">
-            Intelligent Crop Suitability & Optimization
+            {isHindi ? 'स्मार्ट फसल उपयुक्तता एवं अनुकूलन' : 'Intelligent Crop Suitability & Optimization'}
           </h1>
           <p className="text-xs text-charcoal-400 mt-1">
-            Synthesized using Fuzzy Logic, Bayesian Probabilistic Likelihood & Decision Trees
+            {isHindi ? 'फजी लॉजिक, बायेसियन संभावना एवं डिसीजन ट्री द्वारा संचालित' : 'Synthesized using Fuzzy Logic, Bayesian Probabilistic Likelihood & Decision Trees'}
           </p>
         </div>
 
@@ -170,7 +171,7 @@ export const CropRecommendationPage: React.FC = () => {
             className="px-4 py-2 rounded-xl text-xs font-bold bg-white hover:bg-forest-50 text-forest-900 border border-charcoal-200 shadow-sm transition-all flex items-center gap-1.5"
           >
             <RefreshCw className="w-3.5 h-3.5 text-forest-700" />
-            <span>{step === 5 ? 'Re-run Wizard' : 'View Results'}</span>
+            <span>{step === 5 ? (isHindi ? 'विजार्ड पुनः चलाएं' : 'Re-run Wizard') : (isHindi ? 'परिणाम देखें' : 'View Results')}</span>
           </button>
 
           <button
@@ -178,7 +179,7 @@ export const CropRecommendationPage: React.FC = () => {
             className="px-4 py-2 rounded-xl text-xs font-bold bg-forest-900 hover:bg-forest-800 text-white shadow-sm transition-all flex items-center gap-1.5"
           >
             <Download className="w-3.5 h-3.5 text-saffron-400" />
-            <span>Download Report</span>
+            <span>{isHindi ? 'रिपोर्ट डाउनलोड करें' : 'Download Report'}</span>
           </button>
         </div>
       </div>
@@ -490,10 +491,12 @@ export const CropRecommendationPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
               <div>
                 <h2 className="text-xl font-black text-forest-900 tracking-tight">
-                  Top 3 AI Recommended Crops
+                  {isHindi ? 'शीर्ष 3 एआई अनुशंसित फसलें' : 'Top 3 AI Recommended Crops'}
                 </h2>
                 <p className="text-xs text-charcoal-400">
-                  Ranked by tri-model ensemble compatibility score with {formData.district} district ({formData.elevation}m ASL)
+                  {isHindi 
+                    ? `${formData.district} जिले (${formData.elevation}मी) के लिए ट्राई-मॉडल एन्सेम्बल उपयुक्तता स्कोर के आधार पर`
+                    : `Ranked by tri-model ensemble compatibility score with ${formData.district} district (${formData.elevation}m ASL)`}
                 </p>
               </div>
 
@@ -503,7 +506,11 @@ export const CropRecommendationPage: React.FC = () => {
                   className="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-charcoal-200 hover:border-forest-300 text-forest-900 transition-all flex items-center gap-1.5"
                 >
                   <Scale className="w-3.5 h-3.5 text-forest-700" />
-                  <span>{isComparing ? 'Close Comparison' : 'Compare Top 3 Crops'}</span>
+                  <span>
+                    {isComparing 
+                      ? (isHindi ? 'तुलना बंद करें' : 'Close Comparison') 
+                      : (isHindi ? 'शीर्ष 3 फसलों की तुलना करें' : 'Compare Top 3 Crops')}
+                  </span>
                 </button>
               </div>
             </div>
@@ -647,10 +654,10 @@ export const CropRecommendationPage: React.FC = () => {
                   </span>
                   <div>
                     <h3 className="text-base font-extrabold text-forest-900">
-                      Interactive What-If Simulator
+                      {isHindi ? 'इंटरैक्टिव यदि-तो परिदृश्य सिम्युलेटर' : 'Interactive What-If Simulator'}
                     </h3>
                     <p className="text-[11px] text-charcoal-500">
-                      Simulate climate shifts & see dynamic recalculation
+                      {isHindi ? 'मौसम व बजट में बदलाव का प्रभाव तुरंत देखें' : 'Simulate climate shifts & see dynamic recalculation'}
                     </p>
                   </div>
                 </div>
@@ -659,7 +666,7 @@ export const CropRecommendationPage: React.FC = () => {
                   {/* Rainfall Slider */}
                   <div>
                     <div className="flex justify-between font-bold text-charcoal-700 mb-1">
-                      <span>Seasonal Rainfall:</span>
+                      <span>{isHindi ? 'मौसमी वर्षा:' : 'Seasonal Rainfall:'}</span>
                       <span className="text-forest-900 font-black">{simRainfall} mm</span>
                     </div>
                     <input
@@ -672,15 +679,15 @@ export const CropRecommendationPage: React.FC = () => {
                       className="w-full accent-forest-700 cursor-pointer"
                     />
                     <div className="flex justify-between text-[10px] text-charcoal-400">
-                      <span>Dry Season (30mm)</span>
-                      <span>Heavy Monsoon (300mm)</span>
+                      <span>{isHindi ? 'शुष्क मौसम (30mm)' : 'Dry Season (30mm)'}</span>
+                      <span>{isHindi ? 'भारी मानसून (300mm)' : 'Heavy Monsoon (300mm)'}</span>
                     </div>
                   </div>
 
                   {/* Temperature Slider */}
                   <div>
                     <div className="flex justify-between font-bold text-charcoal-700 mb-1">
-                      <span>Valley Temperature:</span>
+                      <span>{isHindi ? 'घाटी का तापमान:' : 'Valley Temperature:'}</span>
                       <span className="text-forest-900 font-black">{simTemp}°C</span>
                     </div>
                     <input
@@ -697,7 +704,7 @@ export const CropRecommendationPage: React.FC = () => {
                   {/* Water Availability Toggle */}
                   <div>
                     <label className="block font-bold text-charcoal-700 mb-1">
-                      Simulated Water Availability
+                      {isHindi ? 'सिंचाई जल की उपलब्धता' : 'Simulated Water Availability'}
                     </label>
                     <div className="grid grid-cols-3 gap-2">
                       {(['abundant', 'moderate', 'scarce'] as const).map((w) => (
@@ -711,7 +718,7 @@ export const CropRecommendationPage: React.FC = () => {
                               : 'bg-white border border-charcoal-200 text-charcoal-700'
                           }`}
                         >
-                          {w}
+                          {isHindi ? (w === 'abundant' ? 'प्रचुर' : w === 'moderate' ? 'मध्यम' : 'सीमित') : w}
                         </button>
                       ))}
                     </div>
@@ -720,7 +727,7 @@ export const CropRecommendationPage: React.FC = () => {
                   {/* Budget Slider */}
                   <div>
                     <div className="flex justify-between font-bold text-charcoal-700 mb-1">
-                      <span>Simulated Budget:</span>
+                      <span>{isHindi ? 'अनुमानित बजट:' : 'Simulated Budget:'}</span>
                       <span className="text-forest-900 font-black">₹{simBudget.toLocaleString()}</span>
                     </div>
                     <input
@@ -744,7 +751,11 @@ export const CropRecommendationPage: React.FC = () => {
                   className="w-full py-2.5 rounded-xl text-xs font-black bg-saffron-500 hover:bg-saffron-400 disabled:opacity-60 text-charcoal-900 shadow-md transition-all flex items-center justify-center gap-1.5"
                 >
                   <RefreshCw className={`w-3.5 h-3.5 ${isCalculatingRecommendation ? 'animate-spin' : ''}`} />
-                  <span>{isCalculatingRecommendation ? 'Recalculating Pipeline...' : 'Recalculate Dynamic Suitability'}</span>
+                  <span>
+                    {isCalculatingRecommendation 
+                      ? (isHindi ? 'एआई पाइपलाइन गणना कर रही है...' : 'Recalculating Pipeline...') 
+                      : (isHindi ? 'गतिशील उपयुक्तता की पुनः गणना करें' : 'Recalculate Dynamic Suitability')}
+                  </span>
                 </button>
               </div>
             </div>
