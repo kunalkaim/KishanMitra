@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest-50: #F2F7F4;
+  --color-forest-100: #E1ECE4;
+  --color-forest-200: #C1D9CA;
+  --color-forest-300: #94BEA3;
+  --color-forest-400: #5F9E75;
+  --color-forest-500: #3D8054;
+  --color-forest-600: #2D6B44;
+  --color-forest-700: #235737;
+  --color-forest-800: #1C4B30;
+  --color-forest-900: #174B35;
+  --color-forest-950: #0C261A;
+
+  --color-saffron-50: #FEFAF0;
+  --color-saffron-100: #FDF2D8;
+  --color-saffron-200: #FBE4AE;
+  --color-saffron-300: #F7D07E;
+  --color-saffron-400: #F0BA51;
+  --color-saffron-500: #E8AD45;
+  --color-saffron-600: #CF8E26;
+  --color-saffron-700: #A4681A;
+  --color-saffron-800: #7F4F19;
+  --color-saffron-900: #5E3B16;
+
+  --color-charcoal-50: #F6F8F7;
+  --color-charcoal-100: #EBF0ED;
+  --color-charcoal-200: #D5DFD9;
+  --color-charcoal-300: #B4C3BA;
+  --color-charcoal-400: #758279;
+  --color-charcoal-500: #546359;
+  --color-charcoal-600: #3F4D44;
+  --color-charcoal-700: #2F3C34;
+  --color-charcoal-800: #232F28;
+  --color-charcoal-900: #1E2922;
+
+  --color-kisan-bg: #F8F8F2;
+  --color-kisan-card: #FFFFFF;
+}
+
+@layer base {
+  body {
+    background-color: #F8F8F2;
+    color: #1E2922;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f3f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1d9ca;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5f9e75;
+}
+
+/* Leaflet and Map overrides */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+}
+
+/* Subtle pulse animation for AI indicators */
+@keyframes softPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Report print styles */
+@media print {
+  body {
+    background: white !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

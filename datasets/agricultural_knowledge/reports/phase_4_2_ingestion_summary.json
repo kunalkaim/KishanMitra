@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-11-11T19:58:11.870331+00:00",
+  "ocr_engine": "Tesseract 5.5.3 (hin+eng)",
+  "source_documents_verified": 2,
+  "total_pages_scanned": 16,
+  "accepted_pages": 16,
+  "needs_review_pages": 0,
+  "rejected_pages": 0,
+  "new_chunks_generated": 16,
+  "initial_active_vectors": 8,
+  "new_vectors_added": 16,
+  "final_active_vectors": 24
+}

@@ -1,0 +1,28 @@
+{
+  "stage": "staging_and_verification",
+  "status": "success",
+  "verified_files_count": 3,
+  "records": [
+    {
+      "canonical_filename": "pant_prasar_sandesh_jul_sep_2026.pdf",
+      "sha256": "19d81d858dc6a688430491c767323786b65f1062b8e8543330dc1a8cbb06ae40",
+      "pages": 8,
+      "size": 11898458,
+      "verified": true
+    },
+    {
+      "canonical_filename": "pant_prasar_sandesh_apr_jun_2026.pdf",
+      "sha256": "ea3041fa66dcc27913957cf023e3fba4a0aa0b7c90b2ec19a57e7a10a0810fe1",
+      "pages": 8,
+      "size": 15525179,
+      "verified": true
+    },
+    {
+      "canonical_filename": "uttarakhand_kharif_advisory_2020.pdf",
+      "sha256": "d24de1ac4e3608b661870feedfdf1ca885b3e7aac016f6dbf0da6d43f4de4bc6",
+      "pages": 3,
+      "size": 470743,
+      "verified": true
+    }
+  ]
+}

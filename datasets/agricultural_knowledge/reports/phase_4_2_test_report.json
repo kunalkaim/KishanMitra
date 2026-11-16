@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-11-11T19:59:23.590656+00:00",
+  "tests_passed": 0,
+  "tests_failed": 0,
+  "results": {
+    "test_1_hindi_ocr": {
+      "status": "PASSED",
+      "matched_keywords": [
+        "मृदा",
+        "किसान",
+        "उत्तराखण्ड",
+        "फसल",
+        "कृषि"
+      ]
+    },
+    "test_2_english_ocr": {
+      "status": "PASSED",
+      "sample_tokens": [
+        "24",
+        "2",
+        "mould",
+        "440",
+        "aE",
+        "Ei",
+        "are",
+        "2026"
+      ]
+    },
+    "test_3_mixed_language": {
+      "status": "PASSED",
+      "devanagari_chars": 4156,
+      "latin_numeric_chars": 93
+    },
+    "test_4_corruption_detection": {
+      "status": "PASSED",
+      "corrupt_noise_ratio": 0.45
+    },
+    "test_5_empty_page_detection": {
+      "status": "PASSED"
+    },
+    "test_6_low_confidence_quarantine": {
+      "status": "PASSED",
+      "total_quarantined": 0
+    },
+    "test_7_page_numbers": {
+      "status": "PASSED",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "test_8_citation_correctness": {
+      "status": "PASSED",
+      "cited_title": "Pant Prasar Sandesh (April–June 2026)",
+      "page": 6,
+      "is_historical": false
+    },
+    "test_9_duplicate_prevention": {
+      "status": "PASSED",
+      "vector_count": 24
+    },
+    "test_10_existing_vectors_intact": {
+      "status": "PASSED",
+      "advisory_2020_vectors": 8,
+      "total_active_vectors": 24
+    },
+    "test_11_retrieval": {
+      "status": "PASSED",
+      "hindi_query_top_match": "Pant Prasar Sandesh (April–June 2026)",
+      "english_query_top_match": "Uttarakhand Kharif Season Agricultural Advisory 2020"
+    },
+    "test_12_gemini_generation": {
+      "status": "PASSED",
+      "answer_mode": "rag",
+      "generation_status": "llm_generated",
+      "has_historical_warning": false,
+      "sources_count": 2
+    }
+  },
+  "fastapi_stats": {
+    "total_documents": 4,
+    "indexed_documents": 3,
+    "scanned_documents": 0,
+    "total_knowledge_chunks": 24,
+    "total_catalogued_documents": 4,
+    "physically_staged_documents": 3,
+    "documents_successfully_extracted": 3,
+    "extracted_pages": 19,
+    "generated_chunks": 24,
+    "relational_chunk_records": 15,
+    "active_vector_embeddings": 24,
+    "documents_pending_ocr": 0,
+    "embedding_dimension": 384,
+    "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+    "vector_store": "ChromaDB Persistent Store",
+    "supported_languages": [
+      "Hindi (हिंदी)",
+      "English",
+      "Garhwali / Kumaoni nomenclature"
+    ],
+    "state_coverage": "Uttarakhand (Hill & Plain Agro-climatic Zones)"
+  }
+}

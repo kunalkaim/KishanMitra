@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-11-11T17:14:47.462944+00:00",
+  "configured_model_identifier": "gemini-3.5-flash-lite",
+  "http_api_success_status": "200_OK",
+  "answer_mode": "rag",
+  "generation_status": "llm_generated",
+  "provider_name": "Google Gemini (gemini-3.5-flash-lite)",
+  "latency_seconds": 11.3,
+  "retrieved_chunks_count": 1,
+  "verified_citations_count": 1,
+  "historical_source_warning_status": true,
+  "verified_sources": [
+    {
+      "source_id": "S1",
+      "document_title": "Uttarakhand Kharif Season Agricultural Advisory 2020",
+      "publisher": "Directorate of Extension Education, GBPUAT Pantnagar",
+      "publication_date": "2020-05-02",
+      "page_start": 1,
+      "page_end": 1
+    }
+  ],
+  "factual_verification": {
+    "status": "PASSED",
+    "grounding_source": "Uttarakhand Kharif Season Agricultural Advisory 2020",
+    "page_number": 1,
+    "verified_entities_in_source_pdf": {
+      "Narendra-359": true,
+      "HKR-47": true,
+      "PR-113": true,
+      "Pant Dhan": true,
+      "10": true,
+      "12": true,
+      "19": true,
+      "24": true,
+      "26": true,
+      "Sugandha": true,
+      "Basmati 1121": true
+    }
+  },
+  "sanitization": {
+    "api_key_exposed": false,
+    "tokens_exposed": false
+  }
+}

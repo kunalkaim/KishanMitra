@@ -1,0 +1,208 @@
+{
+  "dataset_name": "Crop Recommendation Dataset",
+  "file_path": "datasets\\crop_recommendation\\raw\\Crop_recommendation.csv",
+  "processed_file_path": "datasets\\crop_recommendation\\processed\\cleaned_crop_recommendation.csv",
+  "total_records": 2200,
+  "total_columns": 8,
+  "features": [
+    "N",
+    "P",
+    "K",
+    "temperature",
+    "humidity",
+    "ph",
+    "rainfall"
+  ],
+  "target": "label",
+  "unique_classes_count": 22,
+  "unique_crops": [
+    "apple",
+    "banana",
+    "blackgram",
+    "chickpea",
+    "coconut",
+    "coffee",
+    "cotton",
+    "grapes",
+    "jute",
+    "kidneybeans",
+    "lentil",
+    "maize",
+    "mango",
+    "mothbeans",
+    "mungbean",
+    "muskmelon",
+    "orange",
+    "papaya",
+    "pigeonpeas",
+    "pomegranate",
+    "rice",
+    "watermelon"
+  ],
+  "is_perfectly_balanced": true,
+  "samples_per_class": 100,
+  "missing_values": {
+    "N": 0,
+    "P": 0,
+    "K": 0,
+    "temperature": 0,
+    "humidity": 0,
+    "ph": 0,
+    "rainfall": 0,
+    "label": 0
+  },
+  "total_missing_values": 0,
+  "duplicate_records": 0,
+  "outlier_analysis_iqr": {
+    "N": {
+      "q1": 21.0,
+      "q3": 84.25,
+      "iqr": 63.25,
+      "lower_bound": -73.875,
+      "upper_bound": 179.125,
+      "outlier_count": 0,
+      "outlier_percentage": 0.0
+    },
+    "P": {
+      "q1": 28.0,
+      "q3": 68.0,
+      "iqr": 40.0,
+      "lower_bound": -32.0,
+      "upper_bound": 128.0,
+      "outlier_count": 138,
+      "outlier_percentage": 6.27
+    },
+    "K": {
+      "q1": 20.0,
+      "q3": 49.0,
+      "iqr": 29.0,
+      "lower_bound": -23.5,
+      "upper_bound": 92.5,
+      "outlier_count": 200,
+      "outlier_percentage": 9.09
+    },
+    "temperature": {
+      "q1": 22.7693746325,
+      "q3": 28.5616539325,
+      "iqr": 5.792279300000001,
+      "lower_bound": 14.080955682499999,
+      "upper_bound": 37.2500728825,
+      "outlier_count": 86,
+      "outlier_percentage": 3.91
+    },
+    "humidity": {
+      "q1": 60.2619528025,
+      "q3": 89.948770755,
+      "iqr": 29.6868179525,
+      "lower_bound": 15.731725873750001,
+      "upper_bound": 134.47899768374998,
+      "outlier_count": 30,
+      "outlier_percentage": 1.36
+    },
+    "ph": {
+      "q1": 5.97169279925,
+      "q3": 6.923642621250002,
+      "iqr": 0.9519498220000013,
+      "lower_bound": 4.543768066249998,
+      "upper_bound": 8.351567354250005,
+      "outlier_count": 57,
+      "outlier_percentage": 2.59
+    },
+    "rainfall": {
+      "q1": 64.55168599999999,
+      "q3": 124.2675078,
+      "iqr": 59.715821800000015,
+      "lower_bound": -25.022046700000033,
+      "upper_bound": 213.84124050000003,
+      "outlier_count": 100,
+      "outlier_percentage": 4.55
+    }
+  },
+  "agronomic_outlier_treatment_policy": "No records removed. Agricultural feature distributions reflect true biological specializations (e.g., rice requires extreme rainfall >200mm, whereas chickpea/kidney beans require low rainfall; apple requires low temperatures and high potassium). Discarding statistical outliers would destroy the distinguishing environmental niche of specialized crop varieties.",
+  "feature_summary_statistics": {
+    "N": {
+      "count": 2200.0,
+      "mean": 50.551818181818184,
+      "std": 36.9173338337566,
+      "min": 0.0,
+      "25%": 21.0,
+      "50%": 37.0,
+      "75%": 84.25,
+      "max": 140.0,
+      "skew": 0.5097213691539147,
+      "kurtosis": -1.0582398753148494
+    },
+    "P": {
+      "count": 2200.0,
+      "mean": 53.36272727272727,
+      "std": 32.98588273858715,
+      "min": 5.0,
+      "25%": 28.0,
+      "50%": 51.0,
+      "75%": 68.0,
+      "max": 145.0,
+      "skew": 1.0107725431372674,
+      "kurtosis": 0.8602787550148228
+    },
+    "K": {
+      "count": 2200.0,
+      "mean": 48.14909090909091,
+      "std": 50.64793054666013,
+      "min": 5.0,
+      "25%": 20.0,
+      "50%": 32.0,
+      "75%": 49.0,
+      "max": 205.0,
+      "skew": 2.3751672388547,
+      "kurtosis": 4.44935441896056
+    },
+    "temperature": {
+      "count": 2200.0,
+      "mean": 25.616243851779544,
+      "std": 5.063748599958843,
+      "min": 8.825674745,
+      "25%": 22.7693746325,
+      "50%": 25.5986932,
+      "75%": 28.5616539325,
+      "max": 43.67549305,
+      "skew": 0.18493273421137887,
+      "kurtosis": 1.2325548517558178
+    },
+    "humidity": {
+      "count": 2200.0,
+      "mean": 71.48177921778637,
+      "std": 22.263811589761083,
+      "min": 14.25803981,
+      "25%": 60.2619528025,
+      "50%": 80.473145665,
+      "75%": 89.948770755,
+      "max": 99.98187601,
+      "skew": -1.0917079195808679,
+      "kurtosis": 0.3021340700925377
+    },
+    "ph": {
+      "count": 2200.0,
+      "mean": 6.469480065256364,
+      "std": 0.7739376880298733,
+      "min": 3.504752314,
+      "25%": 5.97169279925,
+      "50%": 6.42504527,
+      "75%": 6.923642621250002,
+      "max": 9.93509073,
+      "skew": 0.2839294375729441,
+      "kurtosis": 1.6555814549345498
+    },
+    "rainfall": {
+      "count": 2200.0,
+      "mean": 103.46365541576817,
+      "std": 54.95838852487813,
+      "min": 20.21126747,
+      "25%": 64.55168599999999,
+      "50%": 94.86762427,
+      "75%": 124.2675078,
+      "max": 298.5601175,
+      "skew": 0.9657563536272812,
+      "kurtosis": 0.6070792853156082
+    }
+  }
+}

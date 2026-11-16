@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-11-11T19:57:12.593401+00:00",
+  "ocr_engine": "Tesseract 5.5.3 (hin+eng)",
+  "total_pages_scanned": 16,
+  "accepted_pages": 16,
+  "needs_review_pages": 0,
+  "rejected_pages": 0,
+  "documents": [
+    {
+      "document_id": "gbpuat-pant-prasar-sandesh-apr-jun-2026",
+      "title": "Pant Prasar Sandesh (April–June 2026)",
+      "total_pages": 8,
+      "accepted_pages": 8,
+      "needs_review_pages": 0,
+      "rejected_pages": 0
+    },
+    {
+      "document_id": "gbpuat-pant-prasar-sandesh-jul-sep-2026",
+      "title": "Pant Prasar Sandesh (July–September 2026)",
+      "total_pages": 8,
+      "accepted_pages": 8,
+      "needs_review_pages": 0,
+      "rejected_pages": 0
+    }
+  ]
+}

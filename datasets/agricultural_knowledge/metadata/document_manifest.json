@@ -1,0 +1,128 @@
+{
+  "version": "1.0",
+  "repository": "KisanMitra Agricultural Knowledge Base",
+  "state_focus": "Uttarakhand, India",
+  "total_documents": 3,
+  "documents": [
+    {
+      "document_id": "gbpuat-pant-prasar-sandesh-jul-sep-2026",
+      "title": "Pant Prasar Sandesh (July–September 2026)",
+      "publisher": "Directorate of Extension Education, GBPUAT Pantnagar",
+      "source_url": "https://gbpuat.ac.in/directorates/Extension_Edu/pant_prasar/Pant%20Prasar%20Sandesh%20%28July-Sept.%2C%202026%29.pdf",
+      "original_filename": "Pant Prasar Sandesh (July-Sept., 2026).pdf",
+      "stored_filename": "pant_prasar_sandesh_jul_sep_2026.pdf",
+      "document_type": "Agricultural Extension Publication / Quarterly Bulletin",
+      "publication_date": "2026-07-01",
+      "publication_period": "July–September 2026",
+      "state": "Uttarakhand",
+      "districts": [
+        "All Uttarakhand Districts",
+        "Hill & Plain Agro-climatic Zones"
+      ],
+      "crop_categories": [
+        "Cereals",
+        "Pulses",
+        "Millets",
+        "Vegetables",
+        "Horticulture",
+        "Fodder"
+      ],
+      "subject_categories": [
+        "Soil Health",
+        "Crop Protection",
+        "Disease Management",
+        "Sowing Calendar",
+        "Irrigation"
+      ],
+      "language": "hi",
+      "page_count": 8,
+      "sha256_hash": "19d81d858dc6a688430491c767323786b65f1062b8e8543330dc1a8cbb06ae40",
+      "file_path": "datasets/agricultural_knowledge/raw/gbpuat/pant_prasar_sandesh_jul_sep_2026.pdf",
+      "file_size": 11898458,
+      "license_information": "Official State Agricultural University Extension Publication (Public Educational / Agricultural Advisory)",
+      "ingestion_status": "staged",
+      "is_historical": false,
+      "first_page_sample": ""
+    },
+    {
+      "document_id": "gbpuat-pant-prasar-sandesh-apr-jun-2026",
+      "title": "Pant Prasar Sandesh (April–June 2026)",
+      "publisher": "Directorate of Extension Education, GBPUAT Pantnagar",
+      "source_url": "https://www.gbpuat.ac.in/directorates/Extension_Edu/pant_prasar/Pant%20Prasar%20Sandesh%20%28April-June%2C%202026%29.pdf",
+      "original_filename": "Pant Prasar Sandesh (April-June, 2026).pdf",
+      "stored_filename": "pant_prasar_sandesh_apr_jun_2026.pdf",
+      "document_type": "Agricultural Extension Publication / Quarterly Bulletin",
+      "publication_date": "2026-04-01",
+      "publication_period": "April–June 2026",
+      "state": "Uttarakhand",
+      "districts": [
+        "All Uttarakhand Districts",
+        "Hill & Plain Agro-climatic Zones"
+      ],
+      "crop_categories": [
+        "Cereals",
+        "Pulses",
+        "Millets",
+        "Vegetables",
+        "Horticulture",
+        "Fodder"
+      ],
+      "subject_categories": [
+        "Soil Health",
+        "Crop Protection",
+        "Disease Management",
+        "Sowing Calendar",
+        "Irrigation"
+      ],
+      "language": "hi",
+      "page_count": 8,
+      "sha256_hash": "ea3041fa66dcc27913957cf023e3fba4a0aa0b7c90b2ec19a57e7a10a0810fe1",
+      "file_path": "datasets/agricultural_knowledge/raw/gbpuat/pant_prasar_sandesh_apr_jun_2026.pdf",
+      "file_size": 15525179,
+      "license_information": "Official State Agricultural University Extension Publication (Public Educational / Agricultural Advisory)",
+      "ingestion_status": "staged",
+      "is_historical": false,
+      "first_page_sample": ""
+    },
+    {
+      "document_id": "gbpuat-uttarakhand-kharif-advisory-2020",
+      "title": "Uttarakhand Kharif Season Agricultural Advisory 2020",
+      "publisher": "Directorate of Extension Education, GBPUAT Pantnagar",
+      "source_url": "https://gbpuat.ac.in/directorates/Extension_Edu/02.05.2020_Kharif_season_Advisory.pdf",
+      "original_filename": "02.05.2020_Kharif_season_Advisory.pdf",
+      "stored_filename": "uttarakhand_kharif_advisory_2020.pdf",
+      "document_type": "Seasonal Agricultural Advisory Bulletin (Historical)",
+      "publication_date": "2020-05-02",
+      "publication_period": "Kharif 2020",
+      "state": "Uttarakhand",
+      "districts": [
+        "All Uttarakhand Districts",
+        "Hill & Plain Agro-climatic Zones"
+      ],
+      "crop_categories": [
+        "Cereals",
+        "Pulses",
+        "Millets",
+        "Vegetables",
+        "Horticulture",
+        "Fodder"
+      ],
+      "subject_categories": [
+        "Soil Health",
+        "Crop Protection",
+        "Disease Management",
+        "Sowing Calendar",
+        "Irrigation"
+      ],
+      "language": "hi",
+      "page_count": 3,
+      "sha256_hash": "d24de1ac4e3608b661870feedfdf1ca885b3e7aac016f6dbf0da6d43f4de4bc6",
+      "file_path": "datasets/agricultural_knowledge/raw/gbpuat/uttarakhand_kharif_advisory_2020.pdf",
+      "file_size": 470743,
+      "license_information": "Official State Agricultural University Extension Publication (Public Educational / Agricultural Advisory)",
+      "ingestion_status": "staged",
+      "is_historical": true,
+      "first_page_sample": "Advisory for Kharif Season in Uttarakhand  Crops  Area  Varieties  Sowing time  Rice  Tarai,  Bhabhar  &  Plain  Narendra-359, HKR-47, PR-113 & 114, Pant  Dhan- 10,12, 19, 24 & 26, Pant Sugandha Dhan- 15,17 & 27,  Pusa Basmati 1121, 1509, Pant  Bansmati 1 and 2   Nursery sowing- 2nd fortnight May to"
+    }
+  ]
+}

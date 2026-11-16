@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: kisanmitra-db
+    environment:
+      POSTGRES_USER: kisanmitra
+      POSTGRES_PASSWORD: kisanmitra_secure_password
+      POSTGRES_DB: kisanmitra_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kisanmitra -d kisanmitra_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: kisanmitra-backend
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://kisanmitra:kisanmitra_secure_password@db:5432/kisanmitra_db
+      - SECRET_KEY=kisanmitra_super_secret_jwt_key_2026_agriculture_decision_support
+      - ACCESS_TOKEN_EXPIRE_MINUTES=1440
+      - REFRESH_TOKEN_EXPIRE_DAYS=7
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - RAG_LLM_PROVIDER=${RAG_LLM_PROVIDER:-gemini}
+      - RAG_LLM_MODEL=${RAG_LLM_MODEL:-gemini-3.5-flash-lite}
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

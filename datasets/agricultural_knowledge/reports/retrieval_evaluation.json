@@ -1,0 +1,161 @@
+{
+  "evaluation_name": "KisanMitra Multilingual Agricultural RAG Evaluation",
+  "total_tests": 8,
+  "passed_tests": 8,
+  "pass_rate_percentage": 100.0,
+  "embedding_provider": "paraphrase-multilingual-MiniLM-L12-v2",
+  "llm_provider": "OpenAI (gpt-4o-mini)",
+  "test_results": [
+    {
+      "test_id": "TC-01-EN-CROP-RICE",
+      "category": "English Agricultural Question (Crops)",
+      "query": "What are the recommended sowing times, seed rates and varieties for rice in Uttarakhand Tarai and Bhabhar?",
+      "passed": true,
+      "answer_mode": "retrieval_only",
+      "reasons": [
+        "Correct page 1 retrieved.",
+        "Historical 2020 advisory warning correctly flagged."
+      ],
+      "sources_count": 2,
+      "top_source": {
+        "document_title": "Uttarakhand Kharif Season Agricultural Advisory 2020",
+        "publisher": "Directorate of Extension Education, GBPUAT Pantnagar",
+        "publication_date": "2020-05-02",
+        "page_start": 1,
+        "page_end": 1,
+        "source_url": "https://gbpuat.ac.in/directorates/Extension_Edu/02.05.2020_Kharif_season_Advisory.pdf",
+        "retrieval_score": 86.0,
+        "snippet": "Advisory for Kharif Season in Uttarakhand\nCrops\nArea\nVarieties\nSowing time\nRice\nTarai,\nBhabhar\n&\nPlain\nNarendra-359, HKR-47, PR-113 & 114, Pant\nDhan- 10,12, 19, 24 & 26, Pant Sugandha Dhan-\n15,17 & 27,  Pusa Basmati 1121, 1509, Pant\nBansmati 1 and 2\nNursery sowing- 2nd fortnight ...",
+        "is_historical": true
+      }
+    },
+    {
+      "test_id": "TC-02-HI-CROP-MILLETS",
+      "category": "Hindi Agricultural Question (Hill Millets)",
+      "query": "उत्तराखंड में मंडुआ (रागी) और झंगोरा की उन्नत किस्में और बीज दर क्या हैं?",
+      "passed": true,
+      "answer_mode": "retrieval_only",
+      "reasons": [
+        "Correct page 1 retrieved.",
+        "Historical 2020 advisory warning correctly flagged."
+      ],
+      "sources_count": 2,
+      "top_source": {
+        "document_title": "Uttarakhand Kharif Season Agricultural Advisory 2020",
+        "publisher": "Directorate of Extension Education, GBPUAT Pantnagar",
+        "publication_date": "2020-05-02",
+        "page_start": 1,
+        "page_end": 1,
+        "source_url": "https://gbpuat.ac.in/directorates/Extension_Edu/02.05.2020_Kharif_season_Advisory.pdf",
+        "retrieval_score": 32.6,
+        "snippet": "Advisory for Kharif Season in Uttarakhand\nCrops\nArea\nVarieties\nSowing time\nRice\nTarai,\nBhabhar\n&\nPlain\nNarendra-359, HKR-47, PR-113 & 114, Pant\nDhan- 10,12, 19, 24 & 26, Pant Sugandha Dhan-\n15,17 & 27,  Pusa Basmati 1121, 1509, Pant\nBansmati 1 and 2\nNursery sowing- 2nd fortnight ...",
+        "is_historical": true
+      }
+    },
+    {
+      "test_id": "TC-03-EN-VEGETABLES-TOMATO",
+      "category": "Crop-Specific Horticultural Advisory (Tomato)",
+      "query": "Which tomato varieties are recommended for Uttarakhand and what is their nursery sowing time?",
+      "passed": true,
+      "answer_mode": "retrieval_only",
+      "reasons": [
+        "Correct page 2 retrieved.",
+        "Historical 2020 advisory warning correctly flagged."
+      ],
+      "sources_count": 2,
+      "top_source": {
+        "document_title": "Uttarakhand Kharif Season Agricultural Advisory 2020",
+        "publisher": "Directorate of Extension Education, GBPUAT Pantnagar",
+        "publication_date": "2020-05-02",
+        "page_start": 2,
+        "page_end": 2,
+        "source_url": "https://gbpuat.ac.in/directorates/Extension_Edu/02.05.2020_Kharif_season_Advisory.pdf",
+        "retrieval_score": 58.3,
+        "snippet": "Tomato\n\nArka Rakshak, Pant T-3,  Himsona, Naveen\n2000, Naveen 2000+, Abhinav, Samrat, Rakshita\nGold\nApril to June (Hills)\nJune-July (Plains)\nBrinjal\n\nShaymali, Pant Samrat, Pant Rituraj, Pusa purple\nlong, Pusa Anmol, Pusa kranti,  Chaya, PPL 74\nApril to June (Hills)\nJune-July (Pl...",
+        "is_historical": true
+      }
+    },
+    {
+      "test_id": "TC-04-EN-ALLIED-FISHERIES",
+      "category": "Allied Agricultural Practices (Fisheries & Pond Management)",
+      "query": "How should farmers prepare pond for fish culture using cow dung or compost?",
+      "passed": true,
+      "answer_mode": "retrieval_only",
+      "reasons": [
+        "Correct page 3 retrieved.",
+        "Historical 2020 advisory warning correctly flagged."
+      ],
+      "sources_count": 2,
+      "top_source": {
+        "document_title": "Uttarakhand Kharif Season Agricultural Advisory 2020",
+        "publisher": "Directorate of Extension Education, GBPUAT Pantnagar",
+        "publication_date": "2020-05-02",
+        "page_start": 3,
+        "page_end": 3,
+        "source_url": "https://gbpuat.ac.in/directorates/Extension_Edu/02.05.2020_Kharif_season_Advisory.pdf",
+        "retrieval_score": 78.4,
+        "snippet": "Pond preparation: Use cow dung/compost @ 10 q/ha and filled the pond with water upto one\nmeter followed by application of lime @ 200 kg/ha.\nAfter 15-20 days when pond water become green in color, stock fish seed of Rohu, Katla,\nmrigal, silver carp, common carp and grass carp spec...",
+        "is_historical": true
+      }
+    },
+    {
+      "test_id": "TC-05-EN-REGIONAL-MAIZE",
+      "category": "Regional Agro-Climatic Sowing Windows (Maize)",
+      "query": "What is the recommended sowing window for maize in the hill zone vs plain zone of Uttarakhand?",
+      "passed": true,
+      "answer_mode": "retrieval_only",
+      "reasons": [
+        "Correct page 1 retrieved.",
+        "Historical 2020 advisory warning correctly flagged."
+      ],
+      "sources_count": 2,
+      "top_source": {
+        "document_title": "Uttarakhand Kharif Season Agricultural Advisory 2020",
+        "publisher": "Directorate of Extension Education, GBPUAT Pantnagar",
+        "publication_date": "2020-05-02",
+        "page_start": 1,
+        "page_end": 1,
+        "source_url": "https://gbpuat.ac.in/directorates/Extension_Edu/02.05.2020_Kharif_season_Advisory.pdf",
+        "retrieval_score": 60.8,
+        "snippet": "Advisory for Kharif Season in Uttarakhand\nCrops\nArea\nVarieties\nSowing time\nRice\nTarai,\nBhabhar\n&\nPlain\nNarendra-359, HKR-47, PR-113 & 114, Pant\nDhan- 10,12, 19, 24 & 26, Pant Sugandha Dhan-\n15,17 & 27,  Pusa Basmati 1121, 1509, Pant\nBansmati 1 and 2\nNursery sowing- 2nd fortnight ...",
+        "is_historical": true
+      }
+    },
+    {
+      "test_id": "TC-06-UNSUPPORTED-COFFEE",
+      "category": "Questions Outside Knowledge Base (Unsupported Crop)",
+      "query": "What is the ideal pruning schedule and shade canopy management for Arabica coffee plantations in Kerala?",
+      "passed": true,
+      "answer_mode": "insufficient_evidence",
+      "reasons": [
+        "Honest rejection/guardrail triggered: insufficient_evidence"
+      ],
+      "sources_count": 0,
+      "top_source": null
+    },
+    {
+      "test_id": "TC-07-OUT-OF-SCOPE-LIVE-WEATHER",
+      "category": "Questions Requesting Current Weather (Static Document Guardrail)",
+      "query": "What is today's current live rainfall and temperature in Dehradun?",
+      "passed": true,
+      "answer_mode": "live_data_disclaimer",
+      "reasons": [
+        "Honest rejection/guardrail triggered: live_data_disclaimer"
+      ],
+      "sources_count": 0,
+      "top_source": null
+    },
+    {
+      "test_id": "TC-08-OUT-OF-SCOPE-LIVE-MANDI",
+      "category": "Questions Requesting Live Mandi Prices (Static Document Guardrail)",
+      "query": "What is the live mandi price of Basmati rice in Raipur mandi today?",
+      "passed": true,
+      "answer_mode": "live_data_disclaimer",
+      "reasons": [
+        "Honest rejection/guardrail triggered: live_data_disclaimer"
+      ],
+      "sources_count": 0,
+      "top_source": null
+    }
+  ]
+}

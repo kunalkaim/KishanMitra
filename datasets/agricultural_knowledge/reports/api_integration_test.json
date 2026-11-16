@@ -1,0 +1,49 @@
+{
+  "health": {
+    "status": "healthy",
+    "service": "KisanMitra Multilingual RAG Engine",
+    "vector_store": "ChromaDB (Persistent)",
+    "vector_count": 24,
+    "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+    "embedding_dim": 384,
+    "llm_provider": "Google Gemini (gemini-3.5-flash-lite)",
+    "llm_configured": true
+  },
+  "knowledge_stats": {
+    "total_documents": 6,
+    "indexed_documents": 3,
+    "scanned_documents": 0,
+    "total_knowledge_chunks": 24,
+    "total_catalogued_documents": 6,
+    "physically_staged_documents": 3,
+    "documents_successfully_extracted": 3,
+    "extracted_pages": 19,
+    "generated_chunks": 24,
+    "relational_chunk_records": 31,
+    "active_vector_embeddings": 24,
+    "documents_pending_ocr": 0,
+    "embedding_dimension": 384,
+    "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+    "vector_store": "ChromaDB Persistent Store",
+    "supported_languages": [
+      "Hindi (\u0939\u093f\u0902\u0926\u0940)",
+      "English",
+      "Garhwali / Kumaoni nomenclature"
+    ],
+    "state_coverage": "Uttarakhand (Hill & Plain Agro-climatic Zones)"
+  },
+  "documents_count": 6,
+  "retrieve": {
+    "query": "What are the recommended varieties and seed rates for rice in Uttarakhand?",
+    "chunks_count": 3,
+    "top_score": 0.8533
+  },
+  "chat": {
+    "id": "0b74cdb8-a4e9-45b5-869c-7eb223b14802",
+    "sender_role": "assistant",
+    "answer_mode": "rag",
+    "retrieval_status": "success",
+    "sources_count": 2,
+    "content_length": 1393
+  }
+}

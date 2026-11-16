@@ -1,0 +1,322 @@
+{
+  "dataset_metadata": {
+    "name": "Crop Recommendation Dataset",
+    "sha256": "54a5a6e5408668e668667efc50de2fc867c1b875e0431b4f54dd331b0a109a4e",
+    "total_samples": 2200,
+    "train_samples": 1540,
+    "val_samples": 330,
+    "test_samples": 330,
+    "features": [
+      "N",
+      "P",
+      "K",
+      "temperature",
+      "humidity",
+      "ph",
+      "rainfall"
+    ],
+    "classes": [
+      "apple",
+      "banana",
+      "blackgram",
+      "chickpea",
+      "coconut",
+      "coffee",
+      "cotton",
+      "grapes",
+      "jute",
+      "kidneybeans",
+      "lentil",
+      "maize",
+      "mango",
+      "mothbeans",
+      "mungbean",
+      "muskmelon",
+      "orange",
+      "papaya",
+      "pigeonpeas",
+      "pomegranate",
+      "rice",
+      "watermelon"
+    ],
+    "classes_count": 22
+  },
+  "hyperparameter_cross_validation": {
+    "gaussian_nb": {
+      "method": "5-Fold Stratified Cross-Validation on Training Split",
+      "best_var_smoothing": 1e-11,
+      "cv_macro_f1": 0.99479355893149
+    },
+    "decision_tree": {
+      "method": "5-Fold Stratified Cross-Validation on Training Split",
+      "best_params": {
+        "criterion": "gini",
+        "max_depth": 15,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "effective_depth": 15,
+      "cv_macro_f1": 0.9837226870686269
+    }
+  },
+  "validation_simplex_optimization": {
+    "individual_experts_validation": {
+      "fuzzy_logic": {
+        "accuracy": 0.9848484848484849,
+        "macro_f1": 0.9849930111685598,
+        "weight": 1.0
+      },
+      "gaussian_nb": {
+        "accuracy": 0.9939393939393939,
+        "macro_f1": 0.9939326524421074,
+        "weight": 1.0
+      },
+      "decision_tree": {
+        "accuracy": 0.9757575757575757,
+        "macro_f1": 0.9755100665000555,
+        "weight": 1.0
+      }
+    },
+    "equal_weight_ensemble_validation": {
+      "weights": [
+        0.3333,
+        0.3333,
+        0.3334
+      ],
+      "accuracy": 0.9939393939393939,
+      "macro_f1": 0.9939326524421074
+    },
+    "optimized_weighted_ensemble_validation": {
+      "weights": [
+        0.0,
+        0.62,
+        0.38
+      ],
+      "accuracy": 0.996969696969697,
+      "macro_f1": 0.9969663262210537
+    },
+    "ensemble_benefit_analysis": {
+      "improves_over_fuzzy": true,
+      "improves_over_gnb": true,
+      "improves_over_dt": true,
+      "improves_over_equal_weight": true,
+      "uncontributing_experts": [
+        "Fuzzy"
+      ]
+    }
+  },
+  "test_evaluation_untouched": {
+    "fuzzy_logic": {
+      "accuracy": 0.9939393939393939,
+      "balanced_accuracy": 0.993939393939394,
+      "precision_macro": 0.9946524064171123,
+      "precision_weighted": 0.9946524064171124,
+      "recall_macro": 0.993939393939394,
+      "recall_weighted": 0.9939393939393939,
+      "f1_macro": 0.9939123376623378,
+      "f1_weighted": 0.9939123376623377,
+      "log_loss": 1.02352492663766,
+      "brier_score": 0.4689197006971738
+    },
+    "gaussian_nb": {
+      "accuracy": 0.990909090909091,
+      "balanced_accuracy": 0.990909090909091,
+      "precision_macro": 0.9918114973262032,
+      "precision_weighted": 0.9918114973262032,
+      "recall_macro": 0.990909090909091,
+      "recall_weighted": 0.990909090909091,
+      "f1_macro": 0.9908786638833913,
+      "f1_weighted": 0.9908786638833913,
+      "log_loss": 0.014647638938350176,
+      "brier_score": 0.009626978507653068
+    },
+    "decision_tree": {
+      "accuracy": 0.9818181818181818,
+      "balanced_accuracy": 0.9818181818181819,
+      "precision_macro": 0.9828829258976317,
+      "precision_weighted": 0.9828829258976318,
+      "recall_macro": 0.9818181818181819,
+      "recall_weighted": 0.9818181818181818,
+      "f1_macro": 0.9817776425465524,
+      "f1_weighted": 0.9817776425465524,
+      "log_loss": 0.5503168524445627,
+      "brier_score": 0.033712121212121214
+    },
+    "equal_weight_ensemble": {
+      "accuracy": 0.996969696969697,
+      "balanced_accuracy": 0.996969696969697,
+      "precision_macro": 0.9971590909090909,
+      "precision_weighted": 0.9971590909090909,
+      "recall_macro": 0.996969696969697,
+      "recall_weighted": 0.996969696969697,
+      "f1_macro": 0.9969663262210537,
+      "f1_weighted": 0.9969663262210536,
+      "log_loss": 0.24378773964551786,
+      "brier_score": 0.06345865150813719
+    },
+    "optimized_hybrid_ensemble": {
+      "accuracy": 0.996969696969697,
+      "balanced_accuracy": 0.996969696969697,
+      "precision_macro": 0.9971590909090909,
+      "precision_weighted": 0.9971590909090909,
+      "recall_macro": 0.996969696969697,
+      "recall_weighted": 0.996969696969697,
+      "f1_macro": 0.9969663262210537,
+      "f1_weighted": 0.9969663262210536,
+      "log_loss": 0.017776261082463427,
+      "brier_score": 0.010640439669858656
+    }
+  },
+  "ensemble_weights": {
+    "fuzzy_logic": 0.0,
+    "gaussian_nb": 0.62,
+    "decision_tree": 0.38
+  },
+  "per_class_summary": {
+    "apple": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "banana": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "blackgram": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "chickpea": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "coconut": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "coffee": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "cotton": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "grapes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "jute": {
+      "precision": 0.9375,
+      "recall": 1.0,
+      "f1-score": 0.967741935483871,
+      "support": 15.0
+    },
+    "kidneybeans": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "lentil": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "maize": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "mango": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "mothbeans": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "mungbean": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "muskmelon": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "orange": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "papaya": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "pigeonpeas": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "pomegranate": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "rice": {
+      "precision": 1.0,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.9655172413793104,
+      "support": 15.0
+    },
+    "watermelon": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "accuracy": 0.996969696969697,
+    "macro avg": {
+      "precision": 0.9971590909090909,
+      "recall": 0.996969696969697,
+      "f1-score": 0.9969663262210537,
+      "support": 330.0
+    },
+    "weighted avg": {
+      "precision": 0.9971590909090909,
+      "recall": 0.996969696969697,
+      "f1-score": 0.9969663262210536,
+      "support": 330.0
+    }
+  }
+}
