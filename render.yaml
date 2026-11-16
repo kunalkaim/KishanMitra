@@ -8,7 +8,7 @@ services:
     plan: free
     rootDir: backend
     buildCommand: "chmod +x build.sh && ./build.sh"
-    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT --workers 1"
     envVars:
       - key: DATABASE_URL
         value: "sqlite:///./kisanmitra.db"
@@ -28,5 +28,9 @@ services:
         value: "gemini"
       - key: RAG_LLM_MODEL
         value: "gemini-3.5-flash-lite"
+      - key: RAG_EMBEDDING_PROVIDER
+        value: "fast"
+      - key: MALLOC_ARENA_MAX
+        value: "2"
       - key: PYTHON_VERSION
         value: "3.11.0"

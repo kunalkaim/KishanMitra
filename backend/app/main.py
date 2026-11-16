@@ -15,14 +15,8 @@ async def lifespan(app: FastAPI):
     try:
         init_db(db)
         run_seed(db)
-        # Pre-warm ML Predictor and RAG Retriever in memory to avoid request cold-start
-        try:
-            from app.ml.crop_recommendation.predictor import CropRecommendationPredictor
-            CropRecommendationPredictor.get_instance()
-            from app.api.v1.endpoints.recommendations import get_rag_retriever
-            get_rag_retriever()
-        except Exception as e:
-            pass
+    except Exception as e:
+        print(f"[Startup] DB init warning: {e}")
     finally:
         db.close()
     yield
